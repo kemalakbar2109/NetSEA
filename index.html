@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NetSeA — Network Service Excellence Assistant</title>
+  <meta name="description" content="NetSeA is a WhatsApp-driven operations assistant that routes user intent to network analytics modules and returns actionable outputs." />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#121b2f; --line:#22304f; --muted:#aab6d6; --text:#e8eefc; --accent:#8ab4ff;
+      --chip:#1b2a4a; --chipLine:#2a3b61;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1040px;margin:0 auto;padding:44px 18px 70px}
+    .top{
+      display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#2b77ff,#38d6ff);
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#041022
+    }
+    h1{margin:0;font-size:30px;letter-spacing:.2px}
+    .subtitle{margin:6px 0 0;color:var(--muted);max-width:760px}
+    .pill{
+      display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);font-size:13px
+    }
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:18px}
+    .card{
+      grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px
+    }
+    .card h2{margin:0 0 10px;font-size:18px}
+    .muted{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .chip{display:inline-block;padding:7px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--chipLine);font-size:13px}
+    .two{grid-column:span 12}
+    @media (min-width:880px){
+      .two{grid-column:span 6}
+    }
+    .kpi{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px
+    }
+    .kpi .box{
+      padding:12px;border-radius:14px;border:1px dashed var(--chipLine);background:rgba(255,255,255,.02)
+    }
+    code{background:rgba(138,180,255,.12);padding:2px 6px;border-radius:8px}
+    .footer{margin-top:18px;color:var(--muted);font-size:12.5px}
+    .warn{border-left:4px solid #f5c542;padding-left:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="top">
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <h1>NetSeA</h1>
+          <div class="subtitle">
+            Network Service Excellence Assistant — a WhatsApp-driven operations assistant that detects user intent and routes requests to network analytics modules, returning actionable outputs (text + PNG/PDF/CSV).
+          </div>
+        </div>
+      </div>
+      <div class="pill">Official WhatsApp Business Platform • Cloud API Ready</div>
+    </div>
+
+    <div class="grid">
+      <div class="card two">
+        <h2>What NetSeA does</h2>
+        <div class="chips">
+          <span class="chip">Intent detection</span>
+          <span class="chip">Slot filling</span>
+          <span class="chip">Complaint Copilot</span>
+          <span class="chip">KPI Trendline</span>
+          <span class="chip">Geo Coverage</span>
+          <span class="chip">Network Summary</span>
+          <span class="chip">Site Info</span>
+          <span class="chip">Dashboard outputs</span>
+          <span class="chip">Attachments (PNG/PDF/CSV)</span>
+        </div>
+
+        <div class="kpi">
+          <div class="box">
+            <b>Fast interaction</b><br/>
+            <span class="muted">Short commands or free text → routed to the right module.</span>
+          </div>
+          <div class="box">
+            <b>Operational outputs</b><br/>
+            <span class="muted">Returns charts, summaries, and artifacts for action.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card two">
+        <h2>How it works (high level)</h2>
+        <ol class="muted" style="margin:10px 0 0 18px">
+          <li>User chats via WhatsApp</li>
+          <li>NetSeA classifies intent (rules + AI fallback)</li>
+          <li>Missing inputs are requested (only if needed)</li>
+          <li>NetSeA calls the correct backend module (Node/Python/DB)</li>
+          <li>Bot replies with insights + attachments</li>
+        </ol>
+
+        <p class="muted" style="margin-top:12px">
+          Example triggers: <code>hi netsea</code>, <code>kpi trend</code>, <code>geo coverage</code>, <code>complaint</code>, <code>site info</code>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Modules (public overview)</h2>
+        <ul class="muted" style="margin:10px 0 0 18px">
+          <li><b>Complaint Copilot</b>: extracts key fields (e.g., timeframe, location, description) and runs network checks.</li>
+          <li><b>KPI Trendline</b>: hourly/daily KPI charts + caption summary for quick interpretation.</li>
+          <li><b>Geo Coverage</b>: signal/quality snapshot and neighbor context for investigation.</li>
+          <li><b>Network Summary</b>: aggregates multiple checks and generates a concise health summary.</li>
+          <li><b>Site Info</b>: key reference details + nearby site context.</li>
+        </ul>
+        <p class="muted warn" style="margin-top:14px">
+          This page is intentionally high-level and excludes sensitive internal endpoints, credentials, customer identifiers, and private dashboards.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Contact</h2>
+        <p class="muted" style="margin:10px 0 0">
+          Email: <a href="mailto:your.email@company.com">your.email@company.com</a><br/>
+          Location: Indonesia
+        </p>
+        <div class="footer">
+          © NetSeA • Portfolio page for WhatsApp Business Platform onboarding.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
